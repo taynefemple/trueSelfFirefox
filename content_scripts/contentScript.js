@@ -39,7 +39,9 @@ const walk = (node) => {
 
 // where the magic happens...
 const handleText = (textNode) => {
-  textNode.nodeValue = "Everything is Everything";
-};
+  let trueName = textNode.nodeValue;
+  let regexp = new RegExp(`\\b(${oldName})\\b`, 'gi')
 
-walk(document.body);
+  trueName = trueName.replace(regexp, newName);
+  textNode.nodeValue = trueName;
+};
