@@ -1,23 +1,37 @@
 {
   "manifest_version": 2,
-  "name": "Beastify",
+  "name": "True Self",
   "version": "1.0",
-  "description": "Adds a browser action icon to the toolbar. Click the button to choose a beast. The active tab's body content is then replaced with a picture of the chosen beast. See https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Examples#beastify",
-  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/beastify",
+  "description": "Select a new name to display on web pages and become your True Self",
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
   "icons": {
-    "48": "icons/beasts-48.png"
+    "16": "images/flagSmall.png",
+    "48": "images/flagMedium.png",
+    "128": "images/flagLarge.png"
   },
   "permissions": [
     "activeTab"
   ],
   "browser_action": {
-    "default_icon": "icons/beasts-32.png",
-    "default_title": "Beastify",
-    "default_popup": "popup/choose_beast.html"
-  },
-  "web_accessible_resources": [
-    "beasts/frog.jpg",
-    "beasts/turtle.jpg",
-    "beasts/snake.jpg"
-  ]
+    "default_icon": {
+      "128": "images/disabledIcon.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "trueSelf"
+  }
 }
