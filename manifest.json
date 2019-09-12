@@ -14,7 +14,7 @@
         "*://*/*"
       ],
       "js": [
-        "contentScript.js"
+        "content_scripts/contentScript.js"
       ],
       "run_at": "document_end"
     }
