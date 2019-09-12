@@ -25,13 +25,15 @@
     "128": "images/flagLarge.png"
   },
   "permissions": [
+    "storage",
+    "background",
     "activeTab"
   ],
   "browser_action": {
     "default_icon": {
       "128": "images/disabledIcon.png"
     },
-    "default_popup": "popup.html",
+    "default_popup": "popup/trueSelfFirefox.html",
     "default_title": "trueSelf"
   }
 }
