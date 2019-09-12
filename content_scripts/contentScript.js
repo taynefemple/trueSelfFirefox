@@ -1,3 +1,12 @@
+let newName;
+let oldName;
+
+browser.runtime.sendMessage({ action: 'getSettings' }, (settings) => {
+  newName = settings.newName.trim();
+  oldName = settings.oldName.trim();
+  walk(document.body);
+})
+
 const walk = (node) => {
   // This function is the bizness -- walks the dom and swaps
   // I stole this function from here:

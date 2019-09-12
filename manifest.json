@@ -26,7 +26,6 @@
   },
   "permissions": [
     "storage",
-    "background",
     "activeTab"
   ],
   "browser_action": {
