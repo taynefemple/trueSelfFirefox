@@ -1,4 +1,4 @@
-const settings = {
+var settings = {
   oldName: '',
   newName: '',
   enabled: false
