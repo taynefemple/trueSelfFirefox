@@ -31,7 +31,7 @@
   ],
   "browser_action": {
     "default_icon": {
-      "128": "images/disabledIcon.png"
+      "128": "images/flagLarge.png"
     },
     "default_popup": "popup/trueSelfFirefox.html",
     "default_title": "trueSelf"

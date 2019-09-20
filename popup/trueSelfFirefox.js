@@ -19,24 +19,6 @@ const updateHandler = () => {
   browser.storage.local.set(settings);
 };
 
-const showIcon = (bool) => {
-  if (bool) {
-    browser.browserAction.setIcon({
-      path: {
-        16: 'images/flagSmall.png',
-        48: 'images/flagMedium.png',
-        128: 'images/flagLarge.png'
-      }
-    });
-  } else {
-    browser.browserAction.setIcon({
-      path: {
-        128: 'images/disabledIcon.png'
-      }
-    });
-  }
-};
-
 const onInputHandler = (bool) => {
   if (!bool) {
     oldName.value = '';
@@ -48,7 +30,6 @@ const onInputHandler = (bool) => {
   } else {
     submit.checked = true;
   }
-  showIcon(submit.checked);
   updateHandler();
 };
 
@@ -71,7 +52,6 @@ const loadHandler = () => {
     refresh();
   });
   submit.checked = oldName.value && newName.value;
-  showIcon(submit.checked);
 
   const closeAndApplyChanges = () => {
     refresh();
