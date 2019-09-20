@@ -5,11 +5,7 @@ let background;
 let settings;
 let close;
 
-const refresh = () => {
-  browser.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    browser.tabs.reload(tabs[0].id);
-  });
-}
+const refresh = () => browser.tabs.reload();
 
 const updateHandler = () => {
   settings = {
@@ -78,8 +74,8 @@ const loadHandler = () => {
   showIcon(submit.checked);
 
   const closeAndApplyChanges = () => {
-    window.close();
     refresh();
+    window.close();
   }
 
   close.addEventListener('click', () => {
